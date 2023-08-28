@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  jupyter:
+    build: 
+      context: .
+      dockerfile: jupyter-dockerfile
+    volumes:
+      - ../..:/workspaces:cached
+    network_mode: service:db
+  db:
+    build: 
+      context: .
+      dockerfile: mysql-dockerfile
+    volumes:
+      - ../data:/var/lib/mysql:cached
