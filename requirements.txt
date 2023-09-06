@@ -1,1 +1,2 @@
 pymysql==1.1.0
+sqlalchemy_utils==0.41.1
